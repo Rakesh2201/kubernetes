@@ -3,7 +3,7 @@ applications:
     replicaCount: 1
     image:
       repository: nginx
-      tag: latest
+      tag: "latest"
     service:
       port: 80
       targetPort: 80
@@ -18,7 +18,7 @@ applications:
     replicaCount: 1
     image:
       repository: httpd
-      tag: latest
+      tag: "latest"
     service:
       port: 80
       targetPort: 80
@@ -29,21 +29,25 @@ applications:
       </body>
       </html>
 
- app3:
-  name: app3
-  replicaCount: 1
-  image:
-    repository: tomcat
-    tag: latest
-  service:
-    port: 80
-    targetPort: 8080
+  - name: app3
+    replicaCount: 1
+    image:
+      repository: tomcat
+      tag: "9.0"
+    service:
+      port: 80
+      targetPort: 8080
     indexHtml: |
       <html>
       <body>
         <h1>Welcome to Application 3</h1>
       </body>
       </html>
+
+ingress:
+  enabled: true
+  className: nginx
+  host: a34bb12f41d7947f4b682eb653ce230d-1064653258.ap-south-1.elb.amazonaws.com
 
 ingress:
   enabled: true
