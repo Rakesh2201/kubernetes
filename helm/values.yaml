@@ -1,32 +1,45 @@
-app1:
-  name: app1
-  replicaCount: 1
-  image:
-    repository: httpd
-    tag: latest
-  service:
-    port: 80
-    targetPort: 80
+applications:
+  - name: app1
+    replicaCount: 1
+    image:
+      repository: nginx
+      tag: latest
+    service:
+      port: 80
+    indexHtml: |
+      <html>
+      <body>
+        <h1>Welcome to Application 1</h1>
+      </body>
+      </html>
 
-app2:
-  name: app2
-  replicaCount: 1
-  image:
-    repository: nginx
-    tag: latest
-  service:
-    port: 80
-    targetPort: 80
+  - name: app2
+    replicaCount: 1
+    image:
+      repository: httpd
+      tag: latest
+    service:
+      port: 80
+    indexHtml: |
+      <html>
+      <body>
+        <h1>Welcome to Application 2</h1>
+      </body>
+      </html>
 
-app3:
-  name: app3
-  replicaCount: 1
-  image:
-    repository: tomcat
-    tag: latest
-  service:
-    port: 80
-    targetPort: 80
+  - name: app3
+    replicaCount: 1
+    image:
+      repository: tomcat
+      tag: latest
+    service:
+      port: 80
+    indexHtml: |
+      <html>
+      <body>
+        <h1>Welcome to Application 3</h1>
+      </body>
+      </html>
 
 ingress:
   enabled: true
