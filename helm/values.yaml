@@ -4,13 +4,12 @@ applications:
     image:
       repository: nginx
       tag: "latest"
-    service:
-      port: 80
-      targetPort: 80
+    containerPort: 80
     indexHtml: |
+      <!DOCTYPE html>
       <html>
       <body>
-        <h1>Welcome to Application 1</h1>
+        <h1>Welcome to Application 1 - NGINX</h1>
       </body>
       </html>
 
@@ -19,13 +18,12 @@ applications:
     image:
       repository: httpd
       tag: "latest"
-    service:
-      port: 80
-      targetPort: 80
+    containerPort: 80
     indexHtml: |
+      <!DOCTYPE html>
       <html>
       <body>
-        <h1>Welcome to Application 2</h1>
+        <h1>Welcome to Application 2 - Apache HTTPD</h1>
       </body>
       </html>
 
@@ -34,13 +32,12 @@ applications:
     image:
       repository: tomcat
       tag: "9.0"
-    service:
-      port: 80
-      targetPort: 8080
+    containerPort: 8080
     indexHtml: |
+      <!DOCTYPE html>
       <html>
       <body>
-        <h1>Welcome to Application 3</h1>
+        <h1>Welcome to Application 3 - Tomcat</h1>
       </body>
       </html>
 
