@@ -4,13 +4,4 @@ metadata:
   name: app2-html
 data:
   index.html: |
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <title>Application 2</title>
-    </head>
-    <body>
-      <h1>Welcome to Application 2</h1>
-      <p>This is the second application.</p>
-    </body>
-    </html>
+{{ (index .Values.applications 1).indexHtml | indent 4 }}
