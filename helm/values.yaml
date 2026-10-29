@@ -31,4 +31,4 @@ app3:
 ingress:
   enabled: true
   className: nginx
-  host: a8d58497cd6a24d68970d8a59b27df75-355985851.ap-south-1.elb.amazonaws.com
+  host: a34bb12f41d7947f4b682eb653ce230d-1064653258.ap-south-1.elb.amazonaws.com
