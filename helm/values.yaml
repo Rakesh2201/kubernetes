@@ -5,6 +5,9 @@ applications:
       repository: nginx
       tag: "latest"
     containerPort: 80
+    service:
+      port: 80
+      targetPort: 80
     indexHtml: |
       <!DOCTYPE html>
       <html>
@@ -19,6 +22,9 @@ applications:
       repository: httpd
       tag: "latest"
     containerPort: 80
+    service:
+      port: 80
+      targetPort: 80
     indexHtml: |
       <!DOCTYPE html>
       <html>
@@ -31,8 +37,11 @@ applications:
     replicaCount: 1
     image:
       repository: tomcat
-      tag: "9.0"
+      tag: "latest"
     containerPort: 8080
+    service:
+      port: 80
+      targetPort: 8080
     indexHtml: |
       <!DOCTYPE html>
       <html>
@@ -40,11 +49,6 @@ applications:
         <h1>Welcome to Application 3 - Tomcat</h1>
       </body>
       </html>
-
-ingress:
-  enabled: true
-  className: nginx
-  host: a34bb12f41d7947f4b682eb653ce230d-1064653258.ap-south-1.elb.amazonaws.com
 
 ingress:
   enabled: true
