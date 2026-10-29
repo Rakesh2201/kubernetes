@@ -7,6 +7,6 @@ spec:
   selector:
     app: app2
   ports:
-    - port: {{ .Values.app2.service.port }}
-      targetPort: {{ .Values.app2.service.targetPort }}
+    - port: {{ (index .Values.applications 1).service.port }}
+      targetPort: {{ (index .Values.applications 1).service.targetPort }}
       protocol: TCP
