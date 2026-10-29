@@ -22,7 +22,7 @@ app3:
   name: app3
   replicaCount: 1
   image:
-    repository: tomcat
+    repository: httpd
     tag: latest
   service:
     port: 80
