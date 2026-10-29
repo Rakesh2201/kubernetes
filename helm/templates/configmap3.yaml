@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app3-html
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Application 3</title>
+    </head>
+    <body>
+      <h1>Welcome to Application 3</h1>
+      <p>This is the third application.</p>
+    </body>
+    </html>
