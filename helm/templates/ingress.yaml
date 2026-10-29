@@ -4,7 +4,6 @@ kind: Ingress
 metadata:
   name: myapp-ingress
   annotations:
-    nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: {{ .Values.ingress.className | quote }}
@@ -13,7 +12,7 @@ spec:
       http:
         paths:
           - path: /thalapathy
-            pathType: ImplementationSpecific
+            pathType: Prefix
             backend:
               service:
                 name: app1-service
@@ -21,7 +20,7 @@ spec:
                   number: {{ (index .Values.applications 0).service.port }}
 
           - path: /darling
-            pathType: ImplementationSpecific
+            pathType: Prefix
             backend:
               service:
                 name: app2-service
@@ -29,7 +28,7 @@ spec:
                   number: {{ (index .Values.applications 1).service.port }}
 
           - path: /superstar
-            pathType: ImplementationSpecific
+            pathType: Prefix
             backend:
               service:
                 name: app3-service
