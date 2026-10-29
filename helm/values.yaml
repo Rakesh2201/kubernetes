@@ -29,14 +29,15 @@ applications:
       </body>
       </html>
 
-  - name: app3
-    replicaCount: 1
-    image:
-      repository: tomcat
-      tag: latest
-    service:
-      port: 80
-      targetPort: 8080
+ app3:
+  name: app3
+  replicaCount: 1
+  image:
+    repository: tomcat
+    tag: latest
+  service:
+    port: 80
+    targetPort: 8080
     indexHtml: |
       <html>
       <body>
