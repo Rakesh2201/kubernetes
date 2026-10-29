@@ -6,6 +6,7 @@ applications:
       tag: latest
     service:
       port: 80
+      targetPort: 80
     indexHtml: |
       <html>
       <body>
@@ -20,6 +21,7 @@ applications:
       tag: latest
     service:
       port: 80
+      targetPort: 80
     indexHtml: |
       <html>
       <body>
@@ -34,6 +36,7 @@ applications:
       tag: latest
     service:
       port: 80
+      targetPort: 80
     indexHtml: |
       <html>
       <body>
