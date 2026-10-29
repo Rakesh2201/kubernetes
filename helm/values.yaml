@@ -36,7 +36,7 @@ applications:
       tag: latest
     service:
       port: 80
-      targetPort: 80
+      targetPort: 8080
     indexHtml: |
       <html>
       <body>
