@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: app2-deployment
 spec:
-  replicas: {{ .Values.app2.replicaCount }}
+  replicas: {{ (index .Values.applications 1).replicaCount }}
   selector:
     matchLabels:
       app: app2
@@ -14,12 +14,12 @@ spec:
     spec:
       containers:
         - name: app2
-          image: "{{ .Values.app2.image.repository }}:{{ .Values.app2.image.tag }}"
+          image: "{{ (index .Values.applications 1).image.repository }}:{{ (index .Values.applications 1).image.tag }}"
           ports:
-            - containerPort: 80
+            - containerPort: {{ (index .Values.applications 1).containerPort }}
           volumeMounts:
             - name: app2-html
-              mountPath: /usr/share/nginx/html/index.html
+              mountPath: /usr/local/apache2/htdocs/index.html
               subPath: index.html
       volumes:
         - name: app2-html
